@@ -103,7 +103,7 @@ RSpec.describe 'Strings' do
   it 'test 12' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme.delete("e").delete("o").delete("i")
+    actual = rhyme.delete("eio")
     expected = "ny, mny, mny, m"
 
     expect(actual).to eq(expected)
@@ -202,10 +202,10 @@ RSpec.describe 'Strings' do
     expect(actual).to eq(expected)
   end
 
-  xit 'test 23' do
+  it 'test 23' do
     phrase = "  \n\t to the moon\n\n\t    "
     # In place of the line below, call a method to acheive the expected outcome
-    actual = 
+    actual = phrase.strip
     expected = "to the moon"
 
     expect(actual).to eq(expected)
