@@ -14,11 +14,11 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["Bacon", "broccoli", "candy", "Carrots", "FISH"])
   end
 
-  xit 'alphabetically by last letter' do
+  it 'alphabetically by last letter' do
     things = ["pill", "box", "glass", "water", "sponge"]
     transformed = []
     things.each do |thing|
-      # Your code goes here
+      transformed << [thing[-1], thing]
     end
     transformed = transformed.sort
     sorted = []
@@ -28,10 +28,13 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["sponge", "pill", "water", "glass", "box"])
   end
 
-  xit 'sort by distance' do
+  it 'sort by distance' do
     distances = ["1cm", "9cm", "30cm", "4cm", "2cm"]
     transformed = []
-    # Your code goes here
+    
+    distances.each {|dis| 
+    transformed << [dis.to_i, dis]
+  }
     transformed = transformed.sort
     sorted = []
     transformed.each do |sort_key, distance|
@@ -40,21 +43,47 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["1cm", "2cm", "4cm", "9cm", "30cm"])
   end
 
-  xit 'by length' do
+  it 'by length' do
     words = ["heteromorph", "ancyloceratina", "bioengineering", "mathematical", "bug"]
-    # Your code goes here
+    trans = []
+    words.each {|word|
+      trans << [word.length, word]
+  }
+  trans = trans.sort
+  sorted = []
+  trans.each {|num, name|
+    sorted << name
+  }
     expect(sorted).to eq(["bug", "heteromorph", "mathematical", "ancyloceratina", "bioengineering"])
   end
 
-  xit 'by proximity to ten' do
+  it 'by proximity to ten' do
     prices = [3.02, 9.91, 17.9, 10.01, 11.0]
-    # Your code goes here
+    trans = []
+    prices.each {|price|
+      trans << [(10 - price).abs, price]
+    }
+    trans.sort!
+    sorted = []
+    trans.each {|diff, price| sorted << price}
     expect(sorted).to eq([10.01, 9.91, 11.0, 3.02, 17.9])
   end
 
-  xit 'by number of cents' do
+  it 'by number of cents' do
     prices = [3.02, 9.91, 7.9, 10.01, 11.0]
-    # Your code goes here
+    splits = []
+    prices.each {|price|
+      splits << [price.to_s.split('.'), price].flatten  
+  }
+  cents_price = []
+  splits.each {|doll, cents, price|
+  cents_price << [cents, price]
+}
+cents_price.sort!
+sorted = []
+cents_price.each {|string, price|
+  sorted << price 
+}
     expect(sorted).to eq([11.0, 10.01, 3.02, 7.9, 9.91])
   end
 end
