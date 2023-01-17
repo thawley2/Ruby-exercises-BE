@@ -30,16 +30,22 @@ RSpec.describe 'map' do
 
   it 'normalize zip codes' do
     numbers = [234, 10, 9119, 38881]
-    zip_codes = numbers.map {|num| 
-    if num.to_s.length == 5
-      "#{num}"
-    elsif num.to_s.length == 4
-       "0#{num}"
-    elsif num.to_s.length == 3
-       "00#{num}"
-    else
-       "000#{num}"
+    zip_codes = numbers.map {|num|  
+    num = num.to_s
+    while num.length < 5
+      num = num.insert(0, "0")
     end
+    num
+  
+    # if num.to_s.length == 5
+    #   "#{num}"
+    # elsif num.to_s.length == 4
+    #    "0#{num}"
+    # elsif num.to_s.length == 3
+    #    "00#{num}"
+    # else
+    #    "000#{num}"
+    # end
   }
     expect(zip_codes).to eq(["00234", "00010", "09119", "38881"])
   end
