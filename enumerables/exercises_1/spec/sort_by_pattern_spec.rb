@@ -69,21 +69,31 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq([10.01, 9.91, 11.0, 3.02, 17.9])
   end
 
+  # Try to refactor
   it 'by number of cents' do
     prices = [3.02, 9.91, 7.9, 10.01, 11.0]
     splits = []
     prices.each {|price|
-      splits << [price.to_s.split('.'), price].flatten  
-  }
-  cents_price = []
-  splits.each {|doll, cents, price|
-  cents_price << [cents, price]
-}
-cents_price.sort!
-sorted = []
-cents_price.each {|string, price|
-  sorted << price 
-}
+      splits << [price - price.to_i, price]}
+    splits.sort!
+    sorted = []
+    splits.each {|decimal, price|
+      sorted << price
+    }
+
+    # splits = []
+    # prices.each {|price|
+    #   splits << [price.to_s.split('.'), price].flatten  
+    # }
+    # cents_price = []
+    # splits.each {|doll, cents, price|
+    #   cents_price << [cents, price]
+    # }
+    # cents_price.sort!
+    # sorted = []
+    # cents_price.each {|string, price|
+    #   sorted << price 
+    # }
     expect(sorted).to eq([11.0, 10.01, 3.02, 7.9, 9.91])
   end
 end
