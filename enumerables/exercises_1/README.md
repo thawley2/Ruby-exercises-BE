@@ -20,19 +20,19 @@ Keep ping-ponging back-and-forth as you work through the files.
 
 Here's the order to work through:
 
-* `map`
+<!-- * `map`
 * `select`
 * `find` (aka `detect`)
 * `sort_by`
 * `count`
 * `reject`
 * `reduce` (this one is tricky!)
-* `any?`
-* `all?`
-* `none?`
-* `one?`
-* `group_by` (this one is tricky too!)
-* `zip`
+* `any?` -->
+<!-- * `all?` -->
+<!-- * `none?` -->
+<!-- * `one?` -->
+<!-- * `group_by` (this one is tricky too!) -->
+<!-- * `zip` -->
 
 When done (or before you've finished all of these, if you feel like it) go check out exercises in the `exercises_2` directory.
 
