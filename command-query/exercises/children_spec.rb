@@ -21,6 +21,7 @@ RSpec.describe Children do
     children << Child.new('Robert', 2)
     children << Child.new('Fran', 8)
     children << Child.new('Hilbert', 4)
+
     expect(children.eldest.name).to eq('Fran')
   end
 end
