@@ -5,7 +5,6 @@ RSpec.describe Parrot do
   it 'exists' do
     words = ["Sugar", "Flashy", "Giant", "Whisper"]
     perry = Parrot.new({name: "Perry", known_words: words})
-
     expect(perry).to be_an_instance_of(Parrot)
   end
 
