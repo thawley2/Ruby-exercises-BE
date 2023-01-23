@@ -1,12 +1,12 @@
 class Children
     attr_reader :children
-    @@children = nil
     def initialize
+        @children = []
     end
     def eldest
-        @@children
+        @children.max_by {|child| child.age}
     end 
     def <<(child)
-        @@children == nil ? @@children = child : @@children << child
+        @children << child
     end
 end

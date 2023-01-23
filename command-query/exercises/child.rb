@@ -5,7 +5,6 @@ class Child
         @name = name
         @age = age 
     end 
-
 end
 
         
