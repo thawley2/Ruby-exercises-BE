@@ -1,11 +1,14 @@
 class RollCall
     def initialize
-        @names = nil
+        @names = []
     end 
     def <<(name)
-        @names == nil ? @names = [name] : @names << name
+       @names << name
     end
     def longest_name
-        @names.max_by(&:length) if @names != nil
+        return nil if @names.empty?
+        @names.max_by(&:length) 
     end
 end 
+
+
