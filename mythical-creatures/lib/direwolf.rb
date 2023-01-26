@@ -37,11 +37,7 @@ class Stark
         
     end
     def safe?
-        if !@safe
-            @safe
-        else @safe
-        end
-
+        @safe
     end
     def house_words
         'Winter is Coming'
