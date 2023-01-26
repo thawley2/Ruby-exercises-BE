@@ -1,3 +1,6 @@
+def vowels
+  /[aeiouy]/
+end
 RSpec.describe 'reject' do
 
   it 'removes zeroes' do
@@ -11,7 +14,7 @@ RSpec.describe 'reject' do
   it 'removes vowels' do
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = letters.reject do |letter|
-      letter =~ /[aeiouy]/
+      letter =~ vowels
     end
     expect(remaining).to eq(["l", "l", " ", "r", " ", "b", "s", " ", "r", " ", "b", "l", "n", "g", " ", "t", " ", "s"])
   end
@@ -67,7 +70,7 @@ RSpec.describe 'reject' do
 
   it 'remove animals starting with a vowel' do
     animals = ["aardvark", "bonobo", "cat", "dog", "elephant"]
-    remaining = animals.reject {|animal| animal.start_with?(/[aeiou]/)}
+    remaining = animals.reject {|animal| animal.start_with?(vowels)}
     expect(remaining).to eq(["bonobo", "cat", "dog"])
   end
 
