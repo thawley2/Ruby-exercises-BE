@@ -12,7 +12,6 @@ RSpec.describe Clearance do
     clearance = Clearance.new
     # the discount here is a price, so this discount would be 20 percent
     clearance << Item.new('socks', price: 5, discount: 1)
-
     expect(clearance.best_deal).to eq('socks')
   end
 
@@ -21,7 +20,6 @@ RSpec.describe Clearance do
     clearance << Item.new('shirt', price: 16, discount: 2)
     clearance << Item.new('pants', price: 10, discount: 5)
     clearance << Item.new('jacket', price: 30, discount: 10)
-
     expect(clearance.best_deal).to eq('pants')
   end
 end

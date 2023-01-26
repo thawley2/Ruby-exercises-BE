@@ -35,17 +35,17 @@ These exercises focus on these two types of operations.
 <!-- - `roll_call_spec.rb` -->
 <!-- - `santa_spec.rb` -->
 <!-- - `dog_spec.rb` -->
-- `children_spec.rb` Skipping for now
+<!-- - `children_spec.rb` Skipping for now -->
 <!-- - `water_spec.rb` -->
 <!-- - `clock_spec.rb` -->
-- `appointments_spec.rb` Skipping for now
+<!-- - `appointments_spec.rb` Skipping for now -->
 <!-- - `yak_spec.rb` -->
 <!-- - `money_spec.rb` -->
-- `cupcake_spec.rb` Skipping for now
+<!-- - `cupcake_spec.rb` Skipping for now -->
 <!-- - `student_spec.rb` -->
-- `catalogue_spec.rb` Skipping for now
-- `wallet_spec.rb`Skipping for now
-- `clearance_spec.rb`Skipping for now
+<!-- - `catalogue_spec.rb` Skipping for now -->
+<!-- - `wallet_spec.rb`Skipping for now -->
+<!-- - `clearance_spec.rb`Skipping for now -->
 
 ## Go make up more
 

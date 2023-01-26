@@ -12,7 +12,6 @@ require 'pry'
 # The collection you're going to be using lives in ./nesting.rb and is called stores.
 # If you spot an error or want to make this exercise better, please let us know!
 
-
 RSpec.describe 'Advanced Nested Collections' do
   it 'test 1' do
     # EXAMPLE
@@ -24,8 +23,11 @@ RSpec.describe 'Advanced Nested Collections' do
 # need to fix
   it 'test 2' do
     # Find the ingredients for pancakes
-    pancake_ingredients = stores[:dennys][:dishes
-    require 'pry'; binding.pry
+    index_location = stores[:dennys][:dishes].find_index {|dish| 
+      dish[:name] == 'Pancakes'}
+
+    pancake_ingredients = stores[:dennys][:dishes][index_location][:ingredients]
+    
   
 
     expected = ["Flour", "Eggs", "Milk", "Syrup"]
@@ -65,7 +67,6 @@ RSpec.describe 'Advanced Nested Collections' do
     # Return a list of employees across
     # all restaurants
     employee_names = stores.map {|k,v| v[:employees]}.flatten
-
     expected = ["Jeff", "Zach", "Samantha", "Bob", "Sue", "James", "Alvin", "Simon", "Theodore"]
     expect(employee_names).to eq(expected)
   end
@@ -73,7 +74,7 @@ RSpec.describe 'Advanced Nested Collections' do
   it 'test 8' do
     # Return a list of all ingredients
     # across all restaurants
-    ingredients = stores.map { |store, data| data[:dishes].map {|dish| dish[:ingredients]}}.flatten
+    ingredients = stores.map {|store, data| data[:dishes].map {|dish| dish[:ingredients]}}.flatten
     
     expected = [
       "Rice",

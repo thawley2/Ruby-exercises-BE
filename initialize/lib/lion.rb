@@ -1,11 +1,12 @@
 class Lion
-    def initialize(name_sound)
-        @name_sound = name_sound
+    def initialize(animal)
+        @name = animal[:name]
+        @sound = animal[:sound]
     end
     def name
-        @name_sound[:name]
+        @name
     end
     def sound
-        @name_sound[:sound]
+        @sound
     end
 end

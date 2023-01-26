@@ -37,7 +37,7 @@ Continue to follow the errors that your test provides until the test passes. The
 <!-- * `centaur_spec.rb` -->
 <!-- * `ogre_spec.rb` -->
 <!-- * `direwolf_spec.rb` -->
-* `the_journey_spec.rb` (see below)
+* `the_journey_spec.rb` (see below) Did not do.
 
 ## Extra Challenges
 

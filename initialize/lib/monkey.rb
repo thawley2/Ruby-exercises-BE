@@ -1,14 +1,16 @@
 class Monkey
-    def initialize(name_type_food)
-        @name_type_food = name_type_food
+    def initialize((name, type, food))
+        @name = name
+        @type = type
+        @food = food
     end
     def name
-        @name_type_food[0]
+        @name
     end
     def type
-        @name_type_food[1]
+        @type
     end
     def favorite_food
-        @name_type_food[2]
+        @food
     end
 end

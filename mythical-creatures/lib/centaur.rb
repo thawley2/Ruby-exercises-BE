@@ -50,7 +50,7 @@ class Centaur
     def drink_potion
         if @standing && @shot_run_counter == 0
             @shot_run_counter = 3
-            "You drank a potion on an empty stomach and now you are sick"
+            "You drank a potion on an empty stomach and now you are sick, bummer."
         elsif 
             @standing && @shot_run_counter <= 3
             @shot_run_counter = 0
