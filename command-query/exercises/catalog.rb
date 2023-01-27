@@ -6,11 +6,12 @@ class Catalog
         @list << product
     end
     def cheapest
-        if @list.length != 0
-        cheapest_product = @list.min_by {|product| product.price}
-        cheapest_product.name
-        else
-        nil
-        end
+        @list.min_by {|product| product.price}&.name
+        # More complicated way
+        # if @list.length != 0
+        # cheapest_product = @list.min_by {|product| product.price}
+        # cheapest_product.name
+        # else
+        # nil
     end
 end
