@@ -7,14 +7,15 @@ class Clearance
         @best_deals << item 
     end
     def best_deal
-        if @best_deals.length == 0
-            nil 
-        else
-            deals = @best_deals.map do |item|
-           ((item.price[:discount].to_f / item.price[:price].to_f) * 100)
-            end
-            deal_index = deals.index(deals.max)
-            @best_deals[deal_index].name
-        end
+        @best_deals.sort_by {|item| item.price[:discount].fdiv(item.price[:price])}.last&.name
     end
+        # The much more complicated way. 
+        # if @best_deals.length == 0
+        #     nil 
+        # else
+        #     deals = @best_deals.map do |item|
+        #    ((item.price[:discount].to_f / item.price[:price].to_f) * 100)
+        #     end
+        #     deal_index = deals.index(deals.max)
+        #     @best_deals[deal_index].name
 end
