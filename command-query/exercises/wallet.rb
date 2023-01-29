@@ -8,10 +8,10 @@ class Wallet
     end
     def take(*coins)
         coins.each do |coin| 
-            if @cents.find_index(coin) == nil 
-            else
+            # if @cents.find_index(coin) == nil 
+            # else
             @cents.delete_at(@cents.find_index(coin))
-            end
+            # end
         end
     end
     def cents
